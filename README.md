@@ -18,10 +18,20 @@ A small, free Pomodoro timer for the macOS menu bar that also shows where your w
 
 ## Requirements
 
-- macOS 13 Ventura or later
-- Xcode or the Xcode Command Line Tools (for `swiftc`)
+- macOS 13 Ventura or later, on Apple Silicon or Intel
+- To build from source: Xcode or the Xcode Command Line Tools (for `swiftc`)
 
-## Build and install
+## Download
+
+Get the latest `Fokus-x.y.z-macOS.zip` from [Releases](https://github.com/tomoeisozaki/focus/releases/latest). It runs on Apple Silicon and Intel Macs.
+
+1. Unzip it and move **Fokus.app** to your Applications folder.
+2. Open it. Fokus is not notarized by Apple, so the first time macOS refuses to open it.
+3. Go to **System Settings → Privacy & Security**, scroll down, and click **Open Anyway** next to the Fokus message. Confirm once more, and it opens normally from then on.
+
+If you would rather not bypass that check, build it yourself with the steps below. An app you build on your own Mac opens without the prompt.
+
+## Build from source
 
 ```bash
 git clone https://github.com/tomoeisozaki/focus.git
@@ -78,4 +88,4 @@ Fokus adalah timer Pomodoro gratis untuk menu bar macOS yang sekaligus menunjukk
 - Bahasa Indonesia dan English. Ganti di **Pengaturan & catat manual → Bahasa**.
 - Data tersimpan sebagai file CSV di Mac-mu sendiri.
 
-**Cara pasang:** clone repo ini, lalu jalankan `./build.sh`. Butuh macOS 13 ke atas dan Xcode atau Command Line Tools.
+**Cara pasang:** unduh file zip dari [Releases](https://github.com/tomoeisozaki/focus/releases/latest), pindahkan **Fokus.app** ke folder Applications, lalu buka. Karena belum dinotarisasi Apple, macOS akan menolaknya saat pertama kali dibuka. Buka **Pengaturan Sistem → Privasi & Keamanan**, lalu klik **Tetap Buka**. Cara lain: clone repo ini dan jalankan `./build.sh` (butuh macOS 13 ke atas dan Xcode atau Command Line Tools).
