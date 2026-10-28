@@ -389,7 +389,7 @@ final class FocusTimer: ObservableObject {
     // MARK: Technical-time target
 
     /// Optional schedule, set with:
-    /// defaults write com.recovdot.fokus targetSchedule -array "2026-11-02=70" "2026-11-30=50"
+    /// defaults write com.tomoeisozaki.focus targetSchedule -array "2026-11-02=70" "2026-11-30=50"
     /// The latest entry on or before today wins. Without a matching entry the manual setting is used.
     var hasSchedule: Bool { !(defaults.stringArray(forKey: "targetSchedule") ?? []).isEmpty }
 

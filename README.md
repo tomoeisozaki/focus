@@ -48,13 +48,13 @@ Columns: `start, end, minutes, category, note, status`. Status is `completed`, `
 To have the technical-time target change by date, set a schedule. The latest entry on or before today applies:
 
 ```bash
-defaults write com.recovdot.fokus targetSchedule -array "2026-11-02=70" "2026-11-30=50" "2026-12-28=20"
+defaults write com.tomoeisozaki.focus targetSchedule -array "2026-11-02=70" "2026-11-30=50" "2026-12-28=20"
 ```
 
 Restart Fokus after changing it. To go back to the manual setting:
 
 ```bash
-defaults delete com.recovdot.fokus targetSchedule
+defaults delete com.tomoeisozaki.focus targetSchedule
 ```
 
 ## Uninstall
