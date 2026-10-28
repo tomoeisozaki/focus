@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>Fokus</string>
+	<string>Focus</string>
 	<key>CFBundleExecutable</key>
-	<string>Fokus</string>
+	<string>Focus</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.tomoeisozaki.focus</string>
 	<key>CFBundleName</key>
-	<string>Fokus</string>
+	<string>Focus</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>

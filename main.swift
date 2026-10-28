@@ -1,4 +1,4 @@
-// Fokus: a small Pomodoro timer for the macOS menu bar.
+// Focus: a small Pomodoro timer for the macOS menu bar.
 // Logs focus time per category so you can see where your week went.
 // MIT License. See LICENSE.
 
@@ -123,9 +123,14 @@ final class SessionLog {
 
     init() {
         let base = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
-        let dir = base.appendingPathComponent("Fokus", isDirectory: true)
+        let dir = base.appendingPathComponent("Focus", isDirectory: true)
         try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
-        url = dir.appendingPathComponent("sesi.csv")
+        url = dir.appendingPathComponent("sessions.csv")
+        // Version 1.0.0 builds named "Fokus" kept the log in Fokus/sesi.csv. Move it over once.
+        let legacy = base.appendingPathComponent("Fokus/sesi.csv")
+        if !FileManager.default.fileExists(atPath: url.path), FileManager.default.fileExists(atPath: legacy.path) {
+            try? FileManager.default.moveItem(at: legacy, to: url)
+        }
         if !FileManager.default.fileExists(atPath: url.path) {
             try? "start,end,minutes,category,note,status\n".write(to: url, atomically: true, encoding: .utf8)
         }
@@ -601,7 +606,7 @@ struct ContentView: View {
 // MARK: - App
 
 @main
-struct FokusApp: App {
+struct FocusApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject private var timer = FocusTimer()
 

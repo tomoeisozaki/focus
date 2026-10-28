@@ -1,8 +1,8 @@
-# Fokus
+# Focus
 
 A small, free Pomodoro timer for the macOS menu bar that also shows where your week went.
 
-![Fokus in the menu bar](docs/screenshot.png)
+![Focus in the menu bar](docs/screenshot.png)
 
 ## Features
 
@@ -23,11 +23,11 @@ A small, free Pomodoro timer for the macOS menu bar that also shows where your w
 
 ## Download
 
-Get the latest `Fokus-x.y.z-macOS.zip` from [Releases](https://github.com/tomoeisozaki/focus/releases/latest). It runs on Apple Silicon and Intel Macs.
+Get the latest `Focus-x.y.z-macOS.zip` from [Releases](https://github.com/tomoeisozaki/focus/releases/latest). It runs on Apple Silicon and Intel Macs.
 
-1. Unzip it and move **Fokus.app** to your Applications folder.
-2. Open it. Fokus is not notarized by Apple, so the first time macOS refuses to open it.
-3. Go to **System Settings → Privacy & Security**, scroll down, and click **Open Anyway** next to the Fokus message. Confirm once more, and it opens normally from then on.
+1. Unzip it and move **Focus.app** to your Applications folder.
+2. Open it. Focus is not notarized by Apple, so the first time macOS refuses to open it.
+3. Go to **System Settings → Privacy & Security**, scroll down, and click **Open Anyway** next to the Focus message. Confirm once more, and it opens normally from then on.
 
 If you would rather not bypass that check, build it yourself with the steps below. An app you build on your own Mac opens without the prompt.
 
@@ -41,14 +41,14 @@ cd focus
 
 `build.sh` compiles `main.swift` with `swiftc`, signs the app ad hoc, copies it to `/Applications`, and opens it. There is no Xcode project. Look for the timer icon in the menu bar.
 
-The first time a session ends, macOS asks whether Fokus may send notifications. Allow it to get the alerts.
+The first time a session ends, macOS asks whether Focus may send notifications. Allow it to get the alerts.
 
 ## Your data
 
 Sessions are appended to:
 
 ```
-~/Library/Application Support/Fokus/sesi.csv
+~/Library/Application Support/Focus/sessions.csv
 ```
 
 Columns: `start, end, minutes, category, note, status`. Status is `completed`, `stopped` (ended early, logged when it ran at least one minute), or `manual`. Use **Open CSV log** in the app to find the file and open it in Numbers or Excel.
@@ -61,7 +61,7 @@ To have the technical-time target change by date, set a schedule. The latest ent
 defaults write com.tomoeisozaki.focus targetSchedule -array "2026-11-02=70" "2026-11-30=50" "2026-12-28=20"
 ```
 
-Restart Fokus after changing it. To go back to the manual setting:
+Restart Focus after changing it. To go back to the manual setting:
 
 ```bash
 defaults delete com.tomoeisozaki.focus targetSchedule
@@ -69,7 +69,7 @@ defaults delete com.tomoeisozaki.focus targetSchedule
 
 ## Uninstall
 
-Quit Fokus from its menu, then delete `/Applications/Fokus.app`. Your log stays in `~/Library/Application Support/Fokus` until you delete that folder.
+Quit Focus from its menu, then delete `/Applications/Focus.app`. Your log stays in `~/Library/Application Support/Focus` until you delete that folder.
 
 ## License
 
@@ -79,7 +79,7 @@ Quit Fokus from its menu, then delete `/Applications/Fokus.app`. Your log stays 
 
 ## Bahasa Indonesia
 
-Fokus adalah timer Pomodoro gratis untuk menu bar macOS yang sekaligus menunjukkan ke mana waktumu habis setiap minggu.
+Focus adalah timer Pomodoro gratis untuk menu bar macOS yang sekaligus menunjukkan ke mana waktumu habis setiap minggu.
 
 - Timer fokus dan istirahat di menu bar (bawaan 45/10 menit, istirahat panjang 20 menit tiap 3 sesi, semuanya bisa diubah).
 - Setiap sesi diberi kategori: Teknis, Orang/Tim, Strategi & R&D, atau Keuangan & Penjualan.
@@ -88,4 +88,4 @@ Fokus adalah timer Pomodoro gratis untuk menu bar macOS yang sekaligus menunjukk
 - Bahasa Indonesia dan English. Ganti di **Pengaturan & catat manual → Bahasa**.
 - Data tersimpan sebagai file CSV di Mac-mu sendiri.
 
-**Cara pasang:** unduh file zip dari [Releases](https://github.com/tomoeisozaki/focus/releases/latest), pindahkan **Fokus.app** ke folder Applications, lalu buka. Karena belum dinotarisasi Apple, macOS akan menolaknya saat pertama kali dibuka. Buka **Pengaturan Sistem → Privasi & Keamanan**, lalu klik **Tetap Buka**. Cara lain: clone repo ini dan jalankan `./build.sh` (butuh macOS 13 ke atas dan Xcode atau Command Line Tools).
+**Cara pasang:** unduh file zip dari [Releases](https://github.com/tomoeisozaki/focus/releases/latest), pindahkan **Focus.app** ke folder Applications, lalu buka. Karena belum dinotarisasi Apple, macOS akan menolaknya saat pertama kali dibuka. Buka **Pengaturan Sistem → Privasi & Keamanan**, lalu klik **Tetap Buka**. Cara lain: clone repo ini dan jalankan `./build.sh` (butuh macOS 13 ke atas dan Xcode atau Command Line Tools).
