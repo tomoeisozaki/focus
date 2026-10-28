@@ -24,8 +24,8 @@ A small, free Pomodoro timer for the macOS menu bar that also shows where your w
 ## Build and install
 
 ```bash
-git clone https://github.com/tomoeisozaki/fokus.git
-cd fokus
+git clone https://github.com/tomoeisozaki/focus.git
+cd focus
 ./build.sh
 ```
 
